@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+
+public class ClonePie {
+    public static void main(String[] args) throws Exception {
+        ArrayList<Pie> pies = new ArrayList<>();
+        pies.add(new Pie(2.0, "Apple"));
+        pies.add(new Pie(9.5, "Rhubarb"));
+        pies.add(new Pie(3.5, "Blueberry"));
+        pies.add(new Pie(6.5, "Pecan"));
+        pies.add(new Pie(8.0, "Pecan"));
+        cloneYummiestPie(pies);
+        // output [(2.0, "Apple"), (9.5, "Rhubarb"), ..., (2.0, "Appple")]
+        
+        // yummiestBestOrder(pies);
+        /* if you do yummiestBestOrder instead of cloneYummiestPie, 
+        you'll output [(2.0 "Apple"), (9.5, "Rhubarb"),
+                (3.5, "Blueberry"), (2.0, "Appple"),
+                (6.5, "Pecan"), (6.5, "Pecan")]
+         */ 
+    }
+
+    // inserting a copy of the yummiest pie at the end of the list 
+    static void cloneYummiestPie(ArrayList<Pie> pies) {
+    Pie yummiest_greatest = pies.get(0);
+        for(int i = 0; i < pies.size();, i++) {
+            if (pies.get(i).yumminess > yummiest_greatest.yumminess)
+                yummiest_greatest = pies.get(i);
+
+
+
+        }
+       
+       
+            pies.add(yummiest_greatest);
+            System.out.println("The yummiest pie is + pies.get(i).type");
+
+        
+               
+
+        // write your pseudocode here!
+        //Create a for loop that goes through each pie and find the yummiest one, save that type of pie, and then return it later 
+        // give me 2 examples and their output. 
+        // Example 1: {Apple Pie 3,Pumpking 9.5,Pecan 6,Blueberry 7.8, Cream 5.6} For this example, we would save the type of pumpkin pie.
+        //Example 2: {2,4,10,6,7.8,3.2}For this example, we would store the value of 10 as it is higher than the other numbers.
+
+
+    }
+}
+
+    // inserting the cloned yummiest pie 
+    // at an index so that its clone 
+    // is evenly spaced away from it. 
+    // hint: you can use add(int index, E element)
+    static void yummiestBestOrder(ArrayList<Pie> pies) { 
+        // write your pseudocode here! 
+        // Clone the yummuest pie and then seperate it from the actual pie
+        // give me 2 examples and their output. 
+    }
+
+}
+
+class Pie {
+    double yumminess; 
+    String type; // Blueberry, Apple, etc. 
+
+    Pie(double yumminess, String type) {
+        this.yumminess = yumminess; 
+        this.type = type;
+    }
+}
